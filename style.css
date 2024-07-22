@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'Karla';
+    font-display: swap;
+    font-weight: 400, 700;
+    src: url(assets/fonts/static/Karla-Regular.ttf) format('truetype'),
+    url(assets/fonts/Karla-Italic-VariableFont_wght.ttf) format('truetype'),
+    url(assets/fonts/Karla-VariableFont_wght.ttf) format('truetype'),
+    url(assets/fonts/static/Karla-Bold.ttf) format('truetype');
+}
+:root{
+--Light-Green: hsl(148, 38%, 91%);
+--Green: hsl(169, 82%, 27%);
+--Red: hsl(0, 66%, 56%);
+
+--White: hsl(0, 0%, 100%);
+--Medium-Grey: hsl(186, 15%, 59%);
+--Dark-Grey: hsl(187, 24%, 22%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'karla';
+}
+section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Light-Green);
+    min-height: 100vh;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--White);
+    border-radius: 15px;
+}
+form h1{
+    margin-bottom: 10px;
+}
+label{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    color: var(--Medium-Grey);
+}
+.radioAndCheckLabel{
+    margin-top: unset;
+}
+.queryTypeDiv,
+.namesDiv{
+    display: flex;
+    gap: 20px;
+}
+.queryTypeDiv label{
+    cursor: auto;
+}
+input,
+.typeContainer,
+textarea{
+    border: 1px solid var(--Medium-Grey);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 15px;
+    font-family: 'Karla';
+    color: var(--Medium-Grey);
+    outline: unset;
+    margin-top: 10px;
+    cursor: pointer;
+    resize: none;
+}
+.typeContainer.active{
+    background-color: var(--Light-Green);
+    border-color: var(--Green);
+}
+input:hover{
+    border: 1px solid var(--Green);
+}
+.typeContainer{
+    display: flex;
+    flex-direction: row-reverse; 
+    width: 50%;
+    justify-content: start;
+    align-items: center;
+    z-index: 50;
+}
+.typeContainer label,
+.consentDiv label{
+    margin-left: 10px;
+}
+input[type="radio"],
+input[type="checkbox"]{
+    margin-top: unset; 
+    opacity: 0;   
+}
+.error{
+    border-color: var(--Red);
+}
+.errorMessage{
+    color: var(--Red);
+    margin-top: 7px;
+    margin-bottom: 15px;
+    font-size: 11px;
+    display: none;
+}
+.errorMessage.active{
+    display: inline;
+}
+.consentDiv{
+    display: flex;
+    margin-top: 20px;
+}
+input[type="submit"]{
+    background-color: var(--Green);
+    color: white;
+    border: unset;
+    margin-top: 25px;
+}
+input[type="submit"]:hover{
+    background-color: var(--Dark-Grey);
+}
+.attribution{
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+}
+.customRadio{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--Medium-Grey);
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+}
+.radioInner{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.customRadio.active{
+    border-color: var(--Green);
+}
+.radioInner.active{
+    background-color: var(--Green);
+}
+
+.consentDiv .customRadio{
+    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+}
+.consentDiv .customRadio.active::before{
+    content: '√'!important;
+    font-size: 10px;
+    transform: rotate(45deg);
+    color: var(--White);
+    display: inline-block;
+    font-weight: 900;
+    position: absolute;
+}
+.consentDiv .customRadio.active{
+    background-color: var(--Green);
+}
+.formSubmissionConfirmation{
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--Dark-Grey);
+    animation: revealFromTop 2s; 
+    display: none; 
+}
+@keyframes revealFromTop {
+    0%{
+        top: -70px;
+        opacity: 0;    }
+    100%{
+        top: 15px;    
+    }  
+}
+.messageContainer{
+    display: flex;
+    gap: 7px;
+    align-items: center; 
+}
+.checkmarkDiv::before{
+    padding: 1px;
+    height: 12px;
+    width: 12px;
+    content: '√'!important;
+    border: 1px solid var(--White);
+    border-radius: 50%;
+    font-size: 8px;
+    color: var(--White);
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+.messageContainer p{
+    color: var(--White);
+    font-weight: 700;
+}
+.thankYouParagraph{
+    color: var(--White);
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .formSubmissionConfirmation{
+        width: 92%;
+    }    
+}
+
+@media (max-width:525px) {
+    .contactFormContainer{
+        width: 100%;
+        padding: 10px;
+    }
+    .namesDiv input{
+        width: 100%;
+    }   
+}
+
+@media (max-width:450px) {
+    .contactFormContainer{
+        width: 100%;
+    }
+    .namesDiv{
+        flex-direction: column;
+        gap: unset;
+    }
+    .namesDiv input{
+        width: 100%;
+    }
+    .queryTypeDiv{
+        flex-direction: column;
+        gap:5px;
+    }
+    .typeContainer{
+        width: 100%;
+    }   
+}
+

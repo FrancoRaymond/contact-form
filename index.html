@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Contact form</title>
+
+</head>
+<body>
+  <section>
+    
+    <div class="contactFormContainer">
+      <form action="">
+        <h1>Contact Us</h1>
+        <div class="namesDiv">
+          <label for="firstName">First Name <br>
+            <input type="text" name="firstName" class="firstName" id="firstName" >
+            <span class="errorMessage">This field is required</span>
+          </label>
+          <label for="LastName">Last Name <br>
+            <input type="text" name="lastName" class="lastName" id="lastName" >
+            <span class="errorMessage">This field is required</span>
+          </label>
+        </div>
+        <label for="email">Email Adress <br>
+          <input type="email" class="emailAdress" id="emailAdress" >
+          <span class="errorMessage">Please enter a valid email address</span>
+        </label>
+        <label for="">Query type
+          <div class="queryTypeDiv">
+            <div class="typeContainer">
+                <div class="customRadio">
+                  <div class="radioInner"></div>
+                </div>
+                <label for="generalEnquiry" class="radioAndCheckLabel">General Enquiry</label>
+                <input type="radio" name="queryType" class="generalEnquiry" id="generalEnquiry" value="General Enquiry" >
+            </div>
+            <div class="typeContainer">
+                <div class="customRadio">
+                  <div class="radioInner"></div>
+                </div>
+                <label for="generalEnquiry" class="radioAndCheckLabel">Support Request</label>
+                <input type="radio" name="queryType" class="supportEnquiry" id="supportEnquiry" value="Support Enquiry">    
+            </div>
+          </div>
+        </label>
+        <span class="errorMessage radioError">Please select a query type</span>
+        <label for="message">Message <br>
+          <textarea class="messageText" id="messageText" cols="1" rows="3"></textarea>
+          <span class="errorMessage">This field is required</span>
+        </label>
+        <div>
+          <div class="consentDiv">
+            <div class="customRadio"></div>
+            <input type="checkbox" id="consentCheckbox">
+            <label for="" class="radioAndCheckLabel" id="consentLabel">I consent to being contacted by the team</label>
+          </div>
+          <span class="errorMessage checkboxError">To submit this form, plase consent to being contacted</span>
+        </div>
+        <input type="submit" placeholder="submit" class="submit">
+      </form>
+    </div>
+
+    <div class="formSubmissionConfirmation">
+      <div class="messageContainer">
+        <div class="checkmarkDiv"></div>
+        <p>Message sent</p>
+      </div>
+      <p class="thankYouParagraph">Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+  </section>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Raymond</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
